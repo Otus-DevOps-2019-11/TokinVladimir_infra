@@ -46,3 +46,14 @@ gcloud compute instances create reddit-app-test-startup\
   --tags puma-server \
   --restart-on-failure \
   --metadata-from-file startup-script=startup_script.sh # тут подключаем наш скрипт
+
+#Создать правило фаервола
+
+gcloud compute firewall-rules create default-puma-server \
+    --network default \
+    --action allow \
+    --direction ingress \
+    --rules tcp:9292 \
+    --source-ranges 0.0.0.0/0 \
+    --priority 1000 \
+    --target-tags puma-server
