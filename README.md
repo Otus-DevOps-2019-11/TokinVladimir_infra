@@ -31,211 +31,29 @@ bastion_IP = 35.210.117.166
 someinternalhost_IP = 10.132.0.3
 
 
-cat cloud-bastion.ovpn
-#{
-# "push_auth": false,
-# "sync_secret": "8C0cjN6ZvfkTNyjXWdlBAtLfGJ48PFpH",
-# "token_ttl": 172800,
-# "organization_id": "5df9aadcad491b0a2eab0d8f",
-# "user": "test",
-# "disable_reconnect": false,
-# "sync_token": "LFJY9gkC8P5i9K4VjZRMOAzzmQupSXJI",
-# "sync_hash": "800c68c137fee5338e9301ae06fd9f23",
-# "server_public_key": [
-#  "-----BEGIN RSA PUBLIC KEY-----",
-#  "MIICCgKCAgEA7tb4cYFa8FsMQ79Y5iBO/Hs39SG2qT9Mbdt/9rWqleSjB5KB1wQ1",
-#  "a1EJymn+3uWMjmhTiVdz7+ANWkOWPxBNwkjwxIH1RqajkFl8SA6iW7QFXGyJrw49",
-#  "L0DFACfsUzqZBdCqikQd5uVMhgxhyQzuIlSV8IMN6VwsN28e7ltGUMTMukQKVGzk",
-#  "uVjlwIT46lhLvPPhqIEdp7EqxlGa3Vo3WPB3BDxzu8X+mzoPOC/yCAkDGlSKSd5y",
-#  "o3GM1tz2kNCnRQ6xfROJijr1SbeQNmgYICdaUoy7G4iWameLlGKuMjPAEB1uAxcP",
-#  "H9d3p5jrH8yjEjh68j0PTq/5cr7MTPC730ZOCJW0i1QPOGfFINq4slvBE9CxQP/E",
-#  "4kcop2EeCbL5HXZywZkZEuwhiAyZxcPCYn5NHqmwtWsN0bzEYRv0WKAhDQsHEIbu",
-#  "gu+fEwHBJ9F3J88OJZBCPlosrBncDNhgqI3yyHGzZdLEaZr2ynYgx0PaAtcbBXyI",
-#  "3bOzTc7T9BLTbeaeiwg92hwK47Xixx981bQdGkpIDIzgj38KBpJyGqRS/sqCduIr",
-#  "BQYei2WrjYA4m8Ad22sNEMscOWoLQ/dZSSKVxZ3P+9WmwrjH4hqbEOp1kW4rqa+Z",
-#  "WCHHYvRfRYV+tFIXPHVUwgPe2PsZ4RD01Mqk3P6s5SRw7xPyfJ5ZxFUCAwEAAQ==",
-#  "-----END RSA PUBLIC KEY-----"
-# ],
-# "server_id": "5df9ab38ad491b0a2eab0dee",
-# "user_id": "5df9aaddad491b0a2eab0d96",
-# "server": "bastion-vpn",
-# "token": false,
-# "version": 1,
-# "push_auth_ttl": 172800,
-# "sync_hosts": [
-#  "https://35.210.117.166"
-# ],
-# "server_box_public_key": "eugbf3scn0SKUL1yNluurQzw98mhTdG+J72J3cr1Ozw=",
-# "organization": "Otus",
-# "password_mode": "pin"
-#}
-setenv UV_ID c7f29ae425884b3f8f548f0eaf390909
-setenv UV_NAME guarded-stars-4443
-client
-dev tun
-dev-type tun
-remote 35.210.117.166 19705 udp
-nobind
-persist-tun
-cipher AES-128-CBC
-auth SHA1
-verb 2
-mute 3
-push-peer-info
-ping 10
-ping-restart 60
-hand-window 70
-server-poll-timeout 4
-reneg-sec 2592000
-sndbuf 393216
-rcvbuf 393216
-max-routes 1000
-remote-cert-tls server
-comp-lzo no
-auth-user-pass
-key-direction 1
-<ca>
------BEGIN CERTIFICATE-----
-MIIFcjCCA1qgAwIBAgIJAM0eA4woxum/MA0GCSqGSIb3DQEBCwUAMEYxITAfBgNV
-BAoMGDVkZjlhYWRjYWQ0OTFiMGEyZWFiMGQ4ZjEhMB8GA1UEAwwYNWRmOWFhZGNh
-ZDQ5MWIwYTJlYWIwZDkwMB4XDTE5MTIxODA0MjgxM1oXDTI5MTIxNzA0MjgxM1ow
-RjEhMB8GA1UECgwYNWRmOWFhZGNhZDQ5MWIwYTJlYWIwZDhmMSEwHwYDVQQDDBg1
-ZGY5YWFkY2FkNDkxYjBhMmVhYjBkOTAwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAw
-ggIKAoICAQDbxAl4lRDBSQD7ONqAP3tCUMm55xZbRFqwAU6z9ULBhbc7jim2/QdE
-nfp6UEJUGwvIcBtEmnhUZdDZIMcDJZ2CHXta111fAiLAvDtCeln2wMXZFxGyYcMo
-BV1nTXxkEpWEamq53hKiSmfGeBm4bd/uXcuirs9pNr9z94jzfxGp0sV/VH7ENmvI
-+LpxqUo5ne6WBD+jAiulyTzZ8k+ScBcFH5keOrMQZAYz2ceUrcz46VGfBR31CQtt
-6pho/dtCL5X9EnDhIgRXatYXaEqHShhC+l3KFE3y8Vd2DnpjJU4j2VuTEaIxV78U
-Uxdi6xDxc4iE6f4MJQh8lKAzLmkvnv61JWsQlenl+1pnb7lN6+pIk9fkSAU0iyCb
-WhPJYYmEr6eGBADycHqfsf3X25GG724H+HFOjHxzbSufGQYMHz+byFeYxYIEMFMt
-TIlFUGD5RbAIMF7wp0rTekObbEVCxpgeOe0y6ulJixs0u8bKroHyKmTQHudLwb+c
-92xPkaLO4oh7SuMt2Dn4jTTk02zDzhvuSdprjQo/D74ON0EbPPs95AG2wPC/Eas6
-HT73fdJ2r9VwmWPUGOXZgdgsWcw2KRbDUdcgjx3JTIIZOyoUuYi0KNsERQugYKqP
-DezFG1wDCLmp/esGwI9ExnpHNCOpZ7eziLBf9TfDEUxaV8VlP708kwIDAQABo2Mw
-YTAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQU+vNy
-8QY0t39e4QJ1wS9Lks0aveYwHwYDVR0jBBgwFoAU+vNy8QY0t39e4QJ1wS9Lks0a
-veYwDQYJKoZIhvcNAQELBQADggIBAJsCKUc3ZNFCWQGwqgTc8dubyNbTU1nSltzo
-gV3CiqJg0PUC5BGfPpmYgZMR+BILN968WkYURzcmqAMaNcjjdaMlJLTfp5f1sALp
-9WlMN1/GfmquG7lruE+PE7adt7ax86AxtxmGcJs31V7yfHZZkC24e/51pCIzCjVw
-nWwCkEIBA+ZIuJBbC8aZmQAf5NyTXWc317e2ifWldRXhzk6QIpsJMoSz+Z+OLX1D
-A2YDIPpIPCKAdjV6TIGh8mMsJlQPq5CmadCfzyNu/nJb1GN3BLqfeu7o4OnSpayh
-+DZOkMQgSuivvMnGz6Y63SVNJQyNb1u7iwObyIXhtpjZQHQICd/QaJxE8In8nkei
-OEw9kD9qFDfOnffYD3twrDF3Q+IzxRRxIBTmg7PIbvlPCc+3HJFcsd3SGnhxFC6A
-N6vQFolDJTm25FrpofnUMrXycbEYu98jnpVr3MRaeEHpVwMXiCDud5pAlR+btbVO
-7th1QqsJ/fmlvoS33M4CR1cevdHs6t3Ez+0FuNMMu0QMMYNzBz90bj66E/fbXu9m
-K6zQObm8vlEFcD+OUSzdM6kp1XzuCIzW9EcrJs7AJ3WHKM1DbRvjBuaUj3f7tMTl
-HBXX1pOV6DJNjbYktAupWgO0BS486EWmuzA53gMIwCpdAnGKBLgU+F2t7SBcZhhn
-fjiLuz3g
------END CERTIFICATE-----
-</ca>
-<tls-auth>
-#
-# 2048 bit OpenVPN static key
-#
------BEGIN OpenVPN Static key V1-----
-978146655d10b74034115cd59537b192
-aae3b20e985f6257db21b4d813adc7e4
-d8b7a1137bf19f7a9d5f307cb229cc36
-800cabe704d17a9cd8116117b01fe950
-273b6b997f4058397feb53db834c40b1
-64356076d06b61dcf1bc2f9cb1ccdddc
-1fd0fe2e1f781cc42f4dadc7c2f296ab
-f46218a1455ae66160a817095f80c620
-12f61647e4838368c6fbcbbbcbe0daf0
-f0453070f09e3e78aeb70b4e84680093
-a907091ab24e7f82fa3e6ebb34af5b3f
-9c9f9f006bfffc0110d7ff936ee50c25
-5db2e441280aacc29a1c7325b7098bca
-eb3e88f6af638479959332a5d1c959fd
-5415a79748488696cab6e8cab9ca52d1
-fd71a904e6c8146bc5331402c4608ae6
------END OpenVPN Static key V1-----
-</tls-auth>
-<cert>
------BEGIN CERTIFICATE-----
-MIIFgDCCA2igAwIBAgIISkDCDZFpwQAwDQYJKoZIhvcNAQELBQAwRjEhMB8GA1UE
-CgwYNWRmOWFhZGNhZDQ5MWIwYTJlYWIwZDhmMSEwHwYDVQQDDBg1ZGY5YWFkY2Fk
-NDkxYjBhMmVhYjBkOTAwHhcNMTkxMjE4MDQyODE2WhcNMjkxMjE3MDQyODE2WjBG
-MSEwHwYDVQQKDBg1ZGY5YWFkY2FkNDkxYjBhMmVhYjBkOGYxITAfBgNVBAMMGDVk
-ZjlhYWRkYWQ0OTFiMGEyZWFiMGQ5NjCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
-AgoCggIBAN/YI+kjdgwn9VPnXnXHZm4lZmSDAPGEmd2hJaJE/awbKRaQUJ79Gt3i
-G6Wk2PkGPuL562oyKnXVX2M99JKFb3QjhFjiXSBmg57AFXvD7qbGh8M3Bvw7fQWs
-+UJDdyEEDOVCdhq60wBcJUcIWxrgPZStnLVt9a1dVR0W5N3lSjiaSOg3usgJJgph
-fW/UhftbZX2sCISmGup+gKj7ewWPm/comiclneY0aydsKzcuHjMnabFCuGyd1cSi
-IRfsN5l0OAH/nNv7GCjaQaiu+AmlvpqsCJy4BKKLR6OXQbzfilmTv5Pg9oN9TCB0
-3WfNZyvMy2yCy5W6LLihSTIoqHoMYVVEYxQGQ9Y/5BncRBHCAEQmHARressQ4//q
-QC42bg3tA7fHn2vy9byErZL4JjwHDLpDMdg9/13JqFMqdEsV7h7IlksC0XCc26ri
-uma0IiLF19XHRDQNEzwAezUvhdPIIYPXap1LFLrhoK/oORu3D8cdoB6nz/06gJbJ
-mjQ+V24KyzxgBDt/oIDsb81jMnnQv1eEwf0PL57xzh2+hmukVQ6C7uBrKSymEtFQ
-9UoVyQ4D57mV+8riYAsb/FVnw+RpDA96q8lI4P+66CMVoDZ0VWL5ITqnaWB3FwG1
-SX+lmbI0A9XFqaeeT0muZMCAaxA/9BCbbe15AI92Wz09XWIMbfW1AgMBAAGjcjBw
-MA4GA1UdDwEB/wQEAwIFoDAJBgNVHRMEAjAAMBMGA1UdJQQMMAoGCCsGAQUFBwMC
-MB0GA1UdDgQWBBSqS8NAaesvyzcm726XxT5cVwLz1DAfBgNVHSMEGDAWgBT683Lx
-BjS3f17hAnXBL0uSzRq95jANBgkqhkiG9w0BAQsFAAOCAgEAThRDwJNuOn7wpl00
-oD8uFmsE4MZ082D1FyRKVpBPasI4rHMfM2CeTFBIID5LuNIVuRxnWG0rornxh0YN
-YSyM4amkc3J4WTJgsPkGpI+F34k2eY4g+V3yuFgvlWn3gQQACrOC4i7D9gzvHr59
-jAsZ8tC0fywjXzxOv0VNsrXMYodlq6U3QMmGC+KwxYHCQraojic+i88bL6TWAPES
-plIUoIytD6h8+az2KUPUv8zDKpiPpX31GXFzs9mdjIFdi1kWUf13jBttiq9VPu7W
-DtlNPjPkjo/zsS+oRkMXP00+e1aB2NSZp4Z/wui99LnDNaKXh1oLTyvP+qEdCwzx
-7rHjyMz0QPAXrTDMVvWfTBaXTQZOQh2M3Oj4p8BdPDl95fq80r3jvlXZX8MhqAd5
-elssA2r9LuA48HzyVv1vYtpL6FYpk4ZiMl9Jfw/uFtQmhPUxFPckgJ9+ltA2KS0D
-AK2SmsH/c2Nl126TYdvbZsOO8c1EvcR/SVxUPbyaqU1H8sG9FJN7V/XySXK65pUk
-ts9dsytnwVibbjZKDT0ijKGxNZ2JL+ljTYRz6Cz35T6K9OFoZI4A40WZVSLL7aYm
-dKyAt9runEf+QDsUoCMkop2lxdC5xhXoF+5lMNjrQK9iXPLBk9Xi/af+rjn9TRCo
-wQmTTN+0ggqP5ovYxiob0QL4dE4=
------END CERTIFICATE-----
-</cert>
-<key>
------BEGIN PRIVATE KEY-----
-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
-Ku2iCxN8OVZJW0gv16kQfu26vijT5YU=
------END PRIVATE KEY-----
-</key>
+#Домашнее задание 4 - скрипты
+
+testapp_IP = 34.76.209.235
+testapp_port = 9292
+
+#Задание со звездочкой
+
+gcloud compute instances create reddit-app-test-startup\
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server \
+  --restart-on-failure \
+  --metadata-from-file startup-script=startup_script.sh # тут подключаем наш скрипт
+
+#Создать правило фаервола
+
+gcloud compute firewall-rules create default-puma-server \
+    --network default \
+    --action allow \
+    --direction ingress \
+    --rules tcp:9292 \
+    --source-ranges 0.0.0.0/0 \
+    --priority 1000 \
+    --target-tags puma-server
