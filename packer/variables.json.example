@@ -1,0 +1,9 @@
+{
+        "project_id": "infra-XXXXX",
+	"source_image_family": "XXXXXXXX-XXXX-lts"
+	"machine_type": "fX-xxxxxxx",
+        "disk_size": "xx",
+        "disk_type": "pd-ssd",
+        "network": "default",
+        "tags": "xxxxx-xxxxxx"
+}
