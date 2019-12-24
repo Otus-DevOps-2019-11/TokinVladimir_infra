@@ -57,3 +57,23 @@ gcloud compute firewall-rules create default-puma-server \
     --source-ranges 0.0.0.0/0 \
     --priority 1000 \
     --target-tags puma-server
+
+# Домашнее задание 5
+
+Добавили переменные variables.json, добавили этот файл в .gitignore
+
+Создали immutable.json который создает готовый образ с задеплоеным приложением, image_family reddit-full
+
+
+Использовали file который копирует файл с настройками systemd unit
+
+        {
+            "type": "file",
+            "source": "files/puma.service",
+            "destination": "/home/appuser/puma.service"
+        }
+И далее скрипт который копирует файл, перезапускает systemctl daemon-reload и добавляет в автозапуск
+
+Создали shell-скрипт с названием create-redditvm.sh в директории config-scripts. Который запускает инстанс из нашего образа.
+
+Для проверки сразу проходим в браузере ip:порт и видим что приложение отвечает

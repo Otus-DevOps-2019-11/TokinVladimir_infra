@@ -1,0 +1,13 @@
+[Unit]
+Description=Puma HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+User=appuser
+WorkingDirectory=/home/appuser/reddit
+ExecStart=/usr/local/bin/puma -C /var/lib/gems/2.3.0/gems/puma-3.10.0/lib/puma.rb
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
