@@ -1,9 +1,9 @@
 {
-        "project_id": "infra-XXXXX",
-	"source_image_family": "XXXXXXXX-XXXX-lts"
-	"machine_type": "fX-xxxxxxx",
-        "disk_size": "xx",
+        "project_id": "infra-555333",
+	"source_image_family": "ubuntu-1604-lts"
+	"machine_type": "g1-small",
+        "disk_size": "10",
         "disk_type": "pd-ssd",
         "network": "default",
-        "tags": "xxxxx-xxxxxx"
+        "tags": "bla-bla"
 }
