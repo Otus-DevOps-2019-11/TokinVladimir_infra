@@ -77,3 +77,35 @@ gcloud compute firewall-rules create default-puma-server \
 Создали shell-скрипт с названием create-redditvm.sh в директории config-scripts. Который запускает инстанс из нашего образа.
 
 Для проверки сразу проходим в браузере ip:порт и видим что приложение отвечает
+
+# Домашнее задание 6 Terraform
+
+#Установка terraform
+wget https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.8_linux_amd64.zip
+unzip terraform_0.12.8_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
+terraform -v
+
+#Основные команды
+
+terraform plan  "предварительный просмотр изменений"
+terraform apply "применить настройки и запустить инстанс"
+terraform show | grep nat_ip "поиск артрибутов по state файлу"
+terraform taint google_compute_instance.app "Пересоздать ресурс при следующем применении изменений"
+terraform destroy "удалить все созданные ресурсы"
+terraform fmt "отформатировать все конфиг. файлы"
+
+#Самостоятельное задание
+Определил input переменную для приватного ключа для подключения в провижин (connection)
+Определил input переменную для задания зоны в ресурсе "google_compute_instance" "app". У нее значение по умолчанию
+Отформатировал все конфигурационные файлы используя команду terraform fmt
+создал  terraform.tfvars.example
+
+Опишите в коде терраформа добавление ssh ключа пользователя appuser1 в метаданные проекта. Выполните terraform apply и
+проверьте результат (публичный ключ можно брать пользователя appuser)
+
+Пользователь appuser потерял доступ к ssh.
+
+При добавление следующих пользователей каждый предыдущий теряет доступ.
+
+При добавлении ключа для пользователя appuser_web через метаданные проекта, пользователь appuser3 так же потерял доступ.
