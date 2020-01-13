@@ -9,11 +9,11 @@ provider "google" {
 
   # ID проекта
   project = var.project
-
   region = var.region
 }
 resource "google_compute_instance" "app" {
-  name         = "reddit-app"
+  count        = var.instance_count
+  name         = "reddit-app${count.index + 1}"
   machine_type = "g1-small"
   zone         = var.zone
   tags         = ["reddit-app"]
@@ -28,10 +28,7 @@ resource "google_compute_instance" "app" {
   }
   metadata = {
     # путь до публичного ключа
-    ssh-keys = "appuser:${file(var.public_key_path)}"
-    ssh-keys = "appuser1:${file(var.public_key_path)}"
-    ssh-keys = "appuser2:${file(var.public_key_path)}"
-    ssh-keys = "appuser3:${file(var.public_key_path)}"
+  ssh-keys = "appuser:${file(var.public_key_path)}\nappuser1:${file(var.public_key_path)}\nappuser2:${file(var.public_key_path)}\nappuser3:${file(var.public_key_path)}"
   }
   connection {
     type  = "ssh"
