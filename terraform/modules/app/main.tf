@@ -28,7 +28,7 @@ resource "google_compute_instance" "app" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo bash -c 'echo DATABASE_URL=${var.db_ip} >> /etc/environments'"
+      "sudo bash -c 'echo DATABASE_URL=${var.db_external_ip} >> /etc/environments'"
     ]
   }
 

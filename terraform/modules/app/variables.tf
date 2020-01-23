@@ -9,7 +9,7 @@ variable app_disk_image {
   default     = "reddit-app-base"
 }
 
-variable "db_ip" {
+variable "db_external_ip" {
   description = "Reddit DB internal ip"
 }
 
