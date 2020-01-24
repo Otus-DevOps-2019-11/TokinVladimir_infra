@@ -135,3 +135,15 @@ reddit-app2 - много копировать кода, не удобно чит
       "sudo bash -c 'echo DATABASE_URL=${var.db_ip} >> /etc/environments'"
     ]
   }
+
+
+Домашнее задание 8. Управление конфигурацией. Основные DevOps инструменты. Знакомство с Ansible
+
+ansible app -m command -a 'rm -rf ~/reddit'
+
+удаляет каталог reddit, поэтому после повторного запуска ansible-playbook clone.yml
+ok=2  changed=1
+
+Установили ansible, настроили, познакомились с модулями и написали простой плейбук.
+
+Задание со звездочкой не делал
