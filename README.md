@@ -147,3 +147,45 @@ ok=2  changed=1
 Установили ansible, настроили, познакомились с модулями и написали простой плейбук.
 
 Задание со звездочкой не делал
+
+
+Домашнее задание 9. Деплой и управление конфигурацией с Ansible
+
+Разбили плэйбуки по хостам и задачам.
+
+Изменили провижн образов Packer , вместо скриптов использовали ansible
+
+Использовал модуль gce.py.
+
+ansible.cfg
+[defaults]
+inventory = ./inventory.compute.gcp.yml
+remote_user = appuser
+private_key_file = ~/.ssh/appuser
+host_key_checking = False
+retry_files_enabled = False
+deprecation_warnings = False
+
+[inventory]
+enable_plugins = gcp_compute
+
+
+inventory.compute.gcp.yml
+---
+plugin: gcp_compute
+projects:
+  - infra-262323
+zones:
+  - europe-west1-b
+groups:
+  app: "'-app' in name"
+  db: "'-db' in name"
+filters: []
+
+hostnames:
+  - name
+compose:
+   ansible_host: networkInterfaces[0].accessConfigs[0].natIP
+
+
+файл с ключами сервисного пользователя добавил в гитигнор
