@@ -9,7 +9,7 @@ resource "google_compute_instance" "app" {
   network_interface {
     network = "default"
     access_config {
-      nat_ip = "${google_compute_address.app_ip.address}"
+      nat_ip = google_compute_address.app_ip.address
     }
   }
 
@@ -26,20 +26,20 @@ resource "google_compute_instance" "app" {
     private_key = "${file(var.private_key)}"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo bash -c 'echo DATABASE_URL=${var.db_external_ip} >> /etc/environments'"
-    ]
-  }
+#  provisioner "remote-exec" {
+#    inline = [
+#      "sudo bash -c 'echo DATABASE_URL=${var.db_external_ip} >> /etc/environments'"
+#    ]
+#  }
 
-  provisioner "file" {
-    source      = "../modules/app/files/puma.service"
-    destination = "/tmp/puma.service"
-  }
+#  provisioner "file" {
+#    source      = "../modules/app/files/puma.service"
+#    destination = "/tmp/puma.service"
+#  }
 
-  provisioner "remote-exec" {
-    script = "../modules/app/files/deploy.sh"
-  }
+#  provisioner "remote-exec" {
+#    script = "../modules/app/files/deploy.sh"
+#  }
 }
 
 
